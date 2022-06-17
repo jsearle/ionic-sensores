@@ -19,4 +19,28 @@ public class SensoresPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+
+    @PluginMethod
+    public void initSensors(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("result", implementation.initSensors( getContext() ));
+        call.resolve(ret);
+    }
+
+
+    @PluginMethod
+    public void getLight(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.getLight());
+        call.resolve(ret);
+    }
+
+
+    @PluginMethod
+    public void getPressure(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.getPressure());
+        call.resolve(ret);
+    }
 }
